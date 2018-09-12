@@ -21,7 +21,7 @@ class PasajeroCreation(CreateView):
 
 class PasajeroUpdate(UpdateView):
     model = Pasajero
-    success_url = reverse_lazy('Pasajero:list')
+    success_url = reverse_lazy('pasajeros:list')
     fields = ['name']
 
 class PasajeroDelete(DeleteView):
