@@ -16,5 +16,4 @@ urlpatterns = [
     url(r'^nuevo$', PasajeroCreation.as_view(), name='new'),
     url(r'^editar/(?P<pk>\d+)$', PasajeroUpdate.as_view(), name='edit'),
     url(r'^borrar/(?P<pk>\d+)$', PasajeroDelete.as_view(), name='delete'),
-
 ]
