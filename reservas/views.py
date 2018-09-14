@@ -1,29 +1,25 @@
-from django.shortcuts import render
-from .models import Pasajero
-from django.views.generic.detail import DetailView
-from django.views.generic import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from django.views.generic.edit import UpdateView
-from django.views.generic.edit import DeleteView
 
+from reservas.models import Pasajero
 
 class PasajeroList(ListView):
     model = Pasajero
 
-class PasajeroDetail(DetailView):
+class PasajeroView(DetailView):
     model = Pasajero
 
-class PasajeroCreation(CreateView):
+class PasajeroCreate(CreateView):
     model = Pasajero
-    success_url = reverse_lazy('pasajeros:list')
     fields = ['nombre']
+    success_url = reverse_lazy('Pasajero_list')
 
 class PasajeroUpdate(UpdateView):
     model = Pasajero
-    success_url = reverse_lazy('pasajeros:list')
-    fields = ['name']
+    fields = ['nombre']
+    success_url = reverse_lazy('Pasajero_list')
 
 class PasajeroDelete(DeleteView):
     model = Pasajero
-    success_url = reverse_lazy('courses:list')
+    success_url = reverse_lazy('Pasajero_list')

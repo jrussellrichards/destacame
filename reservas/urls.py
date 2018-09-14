@@ -3,17 +3,19 @@ from django.urls import path, include
 
 from .views import (
     PasajeroList,
-    PasajeroDetail,    
+    PasajeroView,    
     PasajeroUpdate,
-    PasajeroCreation,
+    PasajeroCreate,
     PasajeroDelete
 )
+from . import views
 
 urlpatterns = [
 
-    url(r'^$', PasajeroList.as_view(), name='list'),
-    url(r'^(?P<pk>\d+)$', PasajeroDetail.as_view(), name='detail'),
-    url(r'^nuevo$', PasajeroCreation.as_view(), name='new'),
-    url(r'^editar/(?P<pk>\d+)$', PasajeroUpdate.as_view(), name='edit'),
-    url(r'^borrar/(?P<pk>\d+)$', PasajeroDelete.as_view(), name='delete'),
+    path('', views.PasajeroList.as_view(), name='Pasajero_list'),
+    path('view/<int:pk>', views.PasajeroView.as_view(), name='Pasajero_view'),
+    path('new', views.PasajeroCreate.as_view(), name='Pasajero_new'),
+    path('view/<int:pk>', views.PasajeroView.as_view(), name='Pasajero_view'),
+    path('edit/<int:pk>', views.PasajeroUpdate.as_view(), name='Pasajero_edit'),
+    path('delete/<int:pk>', views.PasajeroDelete.as_view(), name='Pasajero_delete'),
 ]
