@@ -22,7 +22,7 @@
                     <a class="navbar-brand" href="trayectos">Trayectos</a>
                 </div>
             </nav>
-    <h1>Pasajeros</h1>
+    <h1>Trayectos</h1>
 
 
     <table class="table">
@@ -35,18 +35,18 @@
             </tr>
         </thead>
         <tbody>
-            {% for Pasajero in object_list %}
+            {% for Trayecto in object_list %}
             <tr>
-                <td>{{ Pasajero.nombre }}</td>
-                <td><a href="{% url "Pasajero_view" Pasajero.id %}">view</a></td>
-                <td><a href="{% url "Pasajero_edit" Pasajero.id %}">edit</a></td>
-                <td><a href="{% url "Pasajero_delete" Pasajero.id %}">delete</a></td>
+                <td>{{ Trayecto.id }}</td>
+                <td><a href="{% url "Trayecto_view" Trayecto.id %}">view</a></td>
+                <td><a href="{% url "Trayecto_edit" Trayecto.id %}">edit</a></td>
+                <td><a href="{% url "Trayecto_delete" Trayecto.id %}">delete</a></td>
             </tr>
             {% endfor %}
 
         </tbody>
     </table>
-    <a href="{% url "Pasajero_add" %}" class="btn btn-primary btn-lg " role="button">Nuevo</a>
+    <a href="{% url "Trayecto_add" %}" class="btn btn-primary btn-lg " role="button">Nuevo</a>
 </body>
 
 </html>

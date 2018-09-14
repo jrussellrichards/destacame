@@ -1,0 +1,5 @@
+<h1>Trayecto Delete</h1>
+<form method="post">{% csrf_token %}
+    Are you sure you want to Trayecto "{{ object }}" ?
+    <input type="submit" value="Submit" />
+</form>
