@@ -1,8 +1,9 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.http import HttpResponse
 
-from reservas.models import Pasajero,Bus,Trayecto,Chofer
+from reservas.models import Pasajero, Bus, Trayecto, Chofer, Boleto, Incluye
 from django.shortcuts import render
 
 class PasajeroList(ListView):
@@ -27,6 +28,8 @@ class PasajeroDelete(DeleteView):
 
 class BusList(ListView):
     model = Bus
+    capacidades=Bus.objects.all()
+
 
 class BusView(DetailView):
     model = Bus
@@ -85,5 +88,25 @@ class TrayectoDelete(DeleteView):
     model = Trayecto
     success_url = reverse_lazy('Trayecto_list')
 
-def Master(request):
+class BoletorCreate(CreateView):
+    model = Boleto
+    fields = ['pasajero','fecha','trayecto']
+    success_url = reverse_lazy('Master')
+
+def asignacion_bus_trigger(request, bus, boleto):
+    bus_asignado = Bus.objects.get(id=bus)			
+    boleto_comprado = Boleto.objects.get(id=boleto)			
+    incluye = Incluye.objects.create(bus=bus_asignado, boleto=boleto_comprado)	
+    incluye.save()							
+    return HttpResponse("ok")
+
+class IncluyeCreate(CreateView):
+    model = Incluye
+    fields = ['boleto','bus','asiento']
+    success_url = reverse_lazy('Trayecto_list')
+
+def Master (request):
     return render(request, 'reservas/master.html', {})
+
+def Agenda(request):
+    return render(request, 'reservas/agenda.html', {})

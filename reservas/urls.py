@@ -53,4 +53,10 @@ urlpatterns = [
     path('trayecto/delete/<int:pk>', views.TrayectoDelete.as_view(), name='Trayecto_delete'),
     url(r'trayecto/add/', TrayectoCreate.as_view(), name='Trayecto_add'),
     path('trayectos', views.TrayectoList.as_view(), name='Trayecto_list'),
+
+    path('boleto', views.BoletorCreate.as_view(), name='create_boleto'),
+    path('agenda', views.Agenda, name='agenda'),
+    url(r'incluye/add/', views.IncluyeCreate.as_view(), name='incluye_add'),
+
+
 ]
