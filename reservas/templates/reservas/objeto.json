@@ -1,16 +1,4 @@
-<HTML>
-<HEAD>
-<TITLE>Agenda</TITLE>
- 
-<style type="text/css">
-
-</style>
-
- 
-</HEAD>
-<BODY>
-<script>
-	var graph = {
+{
     "monday": [
         {"name": "Augusto", "start_time": "08:00", "end_time": "09:00"},
         {"name": "Augusto", "start_time": "09:30", "end_time": "11:00"},
@@ -42,40 +30,3 @@
         {"name": "Aaron", "start_time": "17:00", "end_time": "19:30"}
     ]
 }
-
-function myFunction(dia) {
-    document.writeln("<h1>"+dia+"</h1>");
-    str1="graph."+dia+".length"
-    for ( var i = 0; i < eval(str1); i++) {
-		var obj = graph.monday[i];
-		console.log(obj);
-		var name;
-		var value;
- 
- 
-		for ( var key in obj) {
-			name = key;
-			value = obj[key].toString();
-			+document.writeln("<B>" + name
-					+ ":  </B>" + value
-					);
-			
- 
-		}
-     document.writeln("</br>");
-	}
-
-    }
- 
-	
-	document.writeln("<br><br><div align='center'>");
-    
-    for (key in graph){
-        myFunction(key)
-    }
-	
-    document.writeln("</div>");
-</script>
- 
-</BODY>
-</HTML>
