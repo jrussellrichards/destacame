@@ -104,7 +104,7 @@ class IncluyeCreate(CreateView):
     model = Incluye
     fields = ['boleto','bus','asiento']
     success_url = reverse_lazy('Trayecto_list')
-
+ 
 def Master (request):
     return render(request, 'reservas/master.html', {})
 

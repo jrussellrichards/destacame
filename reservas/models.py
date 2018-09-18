@@ -32,7 +32,7 @@ class Incluye(models.Model):
     asiento = models.IntegerField()
     bus = models.ForeignKey(Bus, on_delete=models.CASCADE)
     boleto = models.ForeignKey(Boleto, on_delete=models.CASCADE)
-    def save(self, *args, **kwargs):		# redefinicion del metodo save() que contiene nuestro trigger
+    def save(self, *args, **kwargs):# redefinicion del metodo save() que contiene nuestro trigger
                  # Aqui ponemos el codigo del trigger -------
             bus_asiento = Bus.objects.get(bus=self.bus)
             bus_asiento.capacidad -= 1

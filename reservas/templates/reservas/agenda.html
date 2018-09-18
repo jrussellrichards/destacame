@@ -43,36 +43,42 @@
     ]
 }
 
-function myFunction(dia) {
-    document.writeln("<h1>"+dia+"</h1>");
-    str1="graph."+dia+".length"
-    for ( var i = 0; i < eval(str1); i++) {
-		var obj = graph.monday[i];
-		console.log(obj);
-		var name;
-		var value;
+function myFunction(agenda) {
+
+    for (dia in agenda){
+            document.writeln("<h1>"+dia+"</h1>");
+            str1="graph."+dia+".length"
+            st2= "graph."+dia+[i]
+            for ( var i = 0; i < eval(str1); i++) {
+                str2= "graph."+dia+"["+i+"]"
+                var obj =eval(str2);
+                var name;
+                var value;
+        
+        
+                for ( var key in obj) {
+                    name = key;
+                    value = obj[key].toString();
+                    +document.writeln("<B>" + name
+                            + ":  </B>" + value
+                            );
+                    
+        
+                }
+            document.writeln("</br>");
+            }
+
+            }
  
- 
-		for ( var key in obj) {
-			name = key;
-			value = obj[key].toString();
-			+document.writeln("<B>" + name
-					+ ":  </B>" + value
-					);
-			
- 
-		}
-     document.writeln("</br>");
-	}
+
 
     }
- 
 	
 	document.writeln("<br><br><div align='center'>");
     
-    for (key in graph){
-        myFunction(key)
-    }
+    
+    myFunction(graph)
+    
 	
     document.writeln("</div>");
 </script>
