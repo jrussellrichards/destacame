@@ -1,4 +1,3 @@
-!
 <!DOCTYPE html>
 <html>
 
@@ -14,14 +13,15 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-inverse">
+            <nav class="navbar navbar-inverse">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="pasajero">Pasajeros</a>
-                    <a class="navbar-brand" href="buses">Buses</a>
-                    <a class="navbar-brand" href="choferes">Choferes</a>
-                    <a class="navbar-brand" href="trayectos">Trayectos</a>
+                    <a class="navbar-brand" href={% url "Pasajero_list" %}>Pasajeros</a>
+                    <a class="navbar-brand" href={% url "Bus_list" %}>Buses</a>
+                    <a class="navbar-brand" href={% url "Chofer_list" %}>Choferes</a>
+                    <a class="navbar-brand" href={% url "Trayecto_list" %}>Trayectos</a>
                     <a class="navbar-brand" href="{% url "create_boleto" %}">Crear boleto</a>
-
+                    <a class="navbar-brand" href="{% url "agenda" %}">Ver agenda</a>
+                    <a class="navbar-brand" href="{% url "incluye_add" %}">Asignar asiento</a>
                 </div>
             </nav>
     <h1>Trayectos</h1>
@@ -34,15 +34,17 @@
                 <th scope="col">View</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
+                <th scope="col">Cantidad de pasajeros</th>
             </tr>
         </thead>
         <tbody>
-            {% for Trayecto in object_list %}
+            {% for Trayecto in boletos %}
             <tr>
                 <td>{{ Trayecto.id }}</td>
                 <td><a href="{% url "Trayecto_view" Trayecto.id %}">view</a></td>
                 <td><a href="{% url "Trayecto_edit" Trayecto.id %}">edit</a></td>
                 <td><a href="{% url "Trayecto_delete" Trayecto.id %}">delete</a></td>
+                <td><p> {{  Trayecto.num_boletos }}</p></td>
             </tr>
             {% endfor %}
 

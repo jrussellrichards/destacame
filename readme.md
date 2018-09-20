@@ -10,7 +10,7 @@ Explicación consultas:
 
 Listar a todos los trayectos con su promedio de pasajeros: A partir del modelo implementado (y el entendimiento del problema dado), un trayecto tiene una cantidad de pasajeros (boletos)correspondientes. Esto es lo que devuelve la consulta. 
 
-Filtrar a todos los buses de un trayecto con más del 0% de su capacidad vendida: Cada vez que se asigna un a un bus un boleto con un asiento determinado, la capacidad del bus disminuye en 1. Esta consulta devuelve todos los buses los cuales su capacidad no es 10 (por defecto). En la lista de buses, si el bus tiene su capacidad completa entonces se indicará en la última columna de esa página como "capacidad completa" y sino, se indicará como "utilizado.
+Filtrar a todos los buses de un trayecto con más del 0% de su capacidad vendida: Cada vez que se asigna un bus un boleto con un asiento determinado, la capacidad del bus disminuye en 1. Esta consulta devuelve todos los buses los cuales su capacidad no es 10 (por defecto). En la lista de buses, si el bus tiene su capacidad completa entonces se indicará en la última columna de esa página como "capacidad completa" y sino, se indicará como "utilizado.
 
 
 Vista:

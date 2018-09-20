@@ -1,4 +1,3 @@
-!
 <!DOCTYPE html>
 <html>
 
@@ -7,24 +6,25 @@
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Chofer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 </head>
 
 <body>
-        <nav class="navbar navbar-inverse">
+ <nav class="navbar navbar-inverse">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="pasajero">Pasajeros</a>
-                    <a class="navbar-brand" href="buses">Buses</a>
-                    <a class="navbar-brand" href="choferes">Choferes</a>
-                    <a class="navbar-brand" href="trayectos">Trayectos</a>
+                    <a class="navbar-brand" href={% url "Pasajero_list" %}>Pasajeros</a>
+                    <a class="navbar-brand" href={% url "Bus_list" %}>Buses</a>
+                    <a class="navbar-brand" href={% url "Chofer_list" %}>Choferes</a>
+                    <a class="navbar-brand" href={% url "Trayecto_list" %}>Trayectos</a>
                     <a class="navbar-brand" href="{% url "create_boleto" %}">Crear boleto</a>
-
+                    <a class="navbar-brand" href="{% url "agenda" %}">Ver agenda</a>
+                    <a class="navbar-brand" href="{% url "incluye_add" %}">Asignar asiento</a>
                 </div>
             </nav>
-    <h1>Pasajeros</h1>
+    <h1>Choferes</h1>
 
 
     <table class="table">

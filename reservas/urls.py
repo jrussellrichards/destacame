@@ -52,7 +52,8 @@ urlpatterns = [
     path('trayecto/edit/<int:pk>', views.TrayectoUpdate.as_view(), name='Trayecto_edit'),
     path('trayecto/delete/<int:pk>', views.TrayectoDelete.as_view(), name='Trayecto_delete'),
     url(r'trayecto/add/', TrayectoCreate.as_view(), name='Trayecto_add'),
-    path('trayectos', views.TrayectoList.as_view(), name='Trayecto_list'),
+    path('trayectos', views.Trayectos2, name='Trayecto_list'),
+    # path('trayectos', views.TrayectoList.as_view(), name='Trayecto_list'),
 
     path('boleto', views.BoletorCreate.as_view(), name='create_boleto'),
     path('agenda', views.Agenda, name='agenda'),

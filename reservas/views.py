@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.http import HttpResponse
 from reservas.models import Pasajero, Bus, Trayecto, Chofer, Boleto, Incluye
 from django.shortcuts import render
+from django.db.models import Count
 
 
 class PasajeroList(ListView):
@@ -124,3 +125,8 @@ def Master(request):
 
 def Agenda(request):
     return render(request, 'reservas/agenda.html', {})
+
+def Trayectos2(request):
+    boletos = Trayecto.objects.annotate(num_boletos=Count('boleto'))
+
+    return render(request, 'reservas/trayecto_list.html', {'boletos':boletos})

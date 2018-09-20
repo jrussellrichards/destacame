@@ -13,6 +13,18 @@
 </head>
 
 <body>
+ <nav class="navbar navbar-inverse">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href={% url "Pasajero_list" %}>Pasajeros</a>
+                    <a class="navbar-brand" href={% url "Bus_list" %}>Buses</a>
+                    <a class="navbar-brand" href={% url "Chofer_list" %}>Choferes</a>
+                    <a class="navbar-brand" href={% url "Trayecto_list" %}>Trayectos</a>
+                    <a class="navbar-brand" href="{% url "create_boleto" %}">Crear boleto</a>
+                    <a class="navbar-brand" href="{% url "agenda" %}">Ver agenda</a>
+                    <a class="navbar-brand" href="{% url "incluye_add" %}">Asignar asiento</a>
+                </div>
+            </nav>
+            
     <h1>Bus Delete</h1>
     <form method="post">{% csrf_token %}
         ¿Estás seguro que deseas borrar el bus "{{ object }}"?
