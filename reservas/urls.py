@@ -58,5 +58,4 @@ urlpatterns = [
     path('agenda', views.Agenda, name='agenda'),
     url(r'incluye/add/', views.IncluyeCreate.as_view(), name='incluye_add'),
 
-
 ]
