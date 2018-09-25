@@ -4,3 +4,7 @@ Requerimientos para una correcta ejecución del programa:
 -Django 2.1
 
 No se ocuparon librerías o dependencias adicionales. Se utilizó el cdn de bootstrap por lo que no es necesario descargarlo. 
+
+Para instalar python es recomendable leer la documentación oficial, la cual se puede encontrar en: https://docs.python.org/3/
+
+Para instalar Django, al igual que python lo podemos hacer directamente desde su documentación oficial en: https://docs.djangoproject.com/en/2.1/
