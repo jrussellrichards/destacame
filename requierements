@@ -1,0 +1,6 @@
+Requerimientos para una correcta ejecución del programa:
+
+-Python 3.7
+-Django 2.1
+
+No se ocuparon librerías o dependencias adicionales. Se utilizó el cdn de bootstrap por lo que no es necesario descargarlo. 
